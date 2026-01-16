@@ -9,10 +9,17 @@
   --text: 229 231 235;
   --muted: 148 163 184;
   --border: 30 41 59;
+   --color-gray: #87888C;
+  --color-mint: #A9DFD8;
+  --color-black: #171821;
+  --color-green: #029F04;
+  --color-dark-navy: #21222D;
+  --color-red: #EA1701;
+  --color-yellow: #FEB002;
 }
 
 /* Global styles */
 body {
-  background-color: rgb(var(--bg));
+  /* background-color: rgb(var(--)); */
   color: rgb(var(--text));
 }
