@@ -2,24 +2,25 @@
 
 /* Figma theme tokens */
 :root {
-  --bg: 15 23 42;        /* #0F172A */
-  --card: 2 6 23;       /* #020617 */
-  --primary: 79 70 229; /* #4F46E5 */
-  --secondary: 34 197 94;
-  --text: 229 231 235;
-  --muted: 148 163 184;
-  --border: 30 41 59;
-   --color-gray: #87888C;
-  --color-mint: #A9DFD8;
-  --color-black: #171821;
-  --color-green: #029F04;
-  --color-dark-navy: #21222D;
-  --color-red: #EA1701;
-  --color-yellow: #FEB002;
+  --bg: 23 24 33;            /* #171821 */
+  --card: 2 6 23;            /* #020617 */
+  --primary: 79 70 229;      /* #4F46E5 */
+  --secondary: 34 197 94;    /* #22C55E */
+  --text: 229 231 235;       /* #E5E7EB */
+  --muted: 148 163 184;      /* #94A3B8 */
+  --border: 30 41 59;        /* #1E293B */
+
+  --color-gray: 135 136 140; /* #87888C */
+  --color-mint: 169 223 216; /* #A9DFD8 */
+  --color-black: 23 24 33;   /* #171821 */
+  --color-green: 2 159 4;    /* #029F04 */
+  --color-dark-navy: 33 34 45; /* #21222D */
+  --color-red: 234 23 1;     /* #EA1701 */
+  --color-yellow: 254 176 2; /* #FEB002 */
 }
 
 /* Global styles */
 body {
-  /* background-color: rgb(var(--)); */
+  background-color: rgb(var(--bg));
   color: rgb(var(--text));
 }
