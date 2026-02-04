@@ -9,6 +9,7 @@ const ProjectSchema = new mongoose.Schema(
       required: true,
     },
     name: { type: String, required: true },
+    description: { type: String },
     status: {
       type: String,
       enum: Object.values(ProjectStatus),
@@ -18,6 +19,22 @@ const ProjectSchema = new mongoose.Schema(
     end_date: { type: Date },
     budget: { type: Number, min: 0 },
     assigned_team: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+    subcontractors: [{ type: mongoose.Schema.Types.ObjectId, ref: "Subcontractor" }],
+    milestones: [
+      {
+        name: { type: String, required: true },
+        due_date: { type: Date },
+        completed: { type: Boolean, default: false },
+      },
+    ],
+    labor_hours: { type: Number, default: 0 },
+    material_usage: [
+      {
+        item: { type: String },
+        quantity: { type: Number },
+        cost: { type: Number },
+      },
+    ],
     documents: [{ type: mongoose.Schema.Types.ObjectId, ref: "Document" }],
   },
   { timestamps: true }

@@ -15,8 +15,14 @@ const DocumentSchema = new mongoose.Schema(
       ref: "User",
       required: true,
     },
+    permissions: [
+      {
+        user_id: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+        role: { type: String, enum: ["view", "edit"], default: "view" },
+      },
+    ],
   },
-  { timestamps: { createdAt: "created_at", updatedAt: false } }
+  { timestamps: { createdAt: "created_at", updatedAt: "updated_at" } }
 );
 
 export default mongoose.models.Document ||

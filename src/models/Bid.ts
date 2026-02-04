@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { BidStatus } from "@/enums";
+import { BidStatus, MaterialType } from "@/enums";
 
 const BidSchema = new mongoose.Schema(
   {
@@ -19,9 +19,12 @@ const BidSchema = new mongoose.Schema(
       enum: Object.values(BidStatus),
       default: BidStatus.DRAFT,
     },
+    is_template: { type: Boolean, default: false },
     details: [
       {
         description: { type: String, required: true },
+        type: { type: String, enum: Object.values(MaterialType) },
+        quantity: { type: Number, default: 1 },
         cost: { type: Number, required: true, min: 0 },
       },
     ],
@@ -30,8 +33,7 @@ const BidSchema = new mongoose.Schema(
       ref: "User",
     },
   },
-  { timestamps: { createdAt: "created_at", updatedAt: false } }
+  { timestamps: { createdAt: "created_at", updatedAt: "updated_at" } }
 );
 
-export default mongoose.models.Bid ||
-  mongoose.model("Bid", BidSchema);
+export default mongoose.models.Bid || mongoose.model("Bid", BidSchema);

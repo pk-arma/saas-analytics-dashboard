@@ -8,6 +8,10 @@ const InvoiceSchema = new mongoose.Schema(
       ref: "Project",
       required: true,
     },
+    related_bid_id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Bid",
+    },
     amount: { type: Number, required: true, min: 0 },
     due_date: { type: Date },
     status: {
@@ -15,7 +19,8 @@ const InvoiceSchema = new mongoose.Schema(
       enum: Object.values(InvoiceStatus),
       default: InvoiceStatus.PENDING,
     },
-    payments: [{ amount: Number, date: Date }],
+    milestone_id: { type: String }, // Reference to project milestone
+    payments: [{ amount: Number, date: Date, reference: String }],
   },
   { timestamps: true }
 );

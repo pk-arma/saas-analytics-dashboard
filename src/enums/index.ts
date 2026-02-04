@@ -39,3 +39,22 @@ export enum NotificationStatus {
   UNREAD = "unread",
   READ = "read",
 }
+
+export enum ClientStatus {
+  LEAD = "lead",
+  PROPOSAL = "proposal",
+  PROJECT = "project",
+  COMPLETED = "completed",
+}
+
+export enum CommunicationType {
+  EMAIL = "email",
+  CALL = "call",
+  MESSAGE = "message",
+}
+
+export enum MaterialType {
+  MATERIAL = "material",
+  LABOR = "labor",
+  SUBCONTRACTOR = "subcontractor",
+}
